@@ -108,6 +108,7 @@ class WkHtmlToPdfEngine extends AbstractPdfEngine
         $options = [
             'quiet' => true,
             'print-media-type' => true,
+            'dpi' => $this->_Pdf->dpi(),
             'orientation' => $this->_Pdf->orientation(),
             'page-size' => $this->_Pdf->pageSize(),
             'encoding' => $this->_Pdf->encoding(),
