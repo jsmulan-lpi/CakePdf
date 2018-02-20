@@ -110,6 +110,13 @@ class CakePdf
     protected $_encoding = 'UTF-8';
 
     /**
+     * DPI
+     *
+     * @var int
+     */
+    protected $_dpi = '300';
+
+    /**
      * Footer HTML
      *
      * @var array
@@ -249,6 +256,7 @@ class CakePdf
         $options = [
             'pageSize',
             'orientation',
+            'dpi',
             'margin',
             'title',
             'encoding',
@@ -418,6 +426,22 @@ class CakePdf
             return $this->_pageSize;
         }
         $this->_pageSize = $pageSize;
+
+        return $this;
+    }
+
+    /**
+     * Get/Set DPI.
+     *
+     * @param null|string $pageSize Page size to set
+     * @return mixed
+     */
+    public function dpi($dpi = null)
+    {
+        if ($dpi === null) {
+            return $this->_dpi;
+        }
+        $this->_dpi = $dpi;
 
         return $this;
     }
